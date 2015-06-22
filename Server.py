@@ -16,17 +16,17 @@ class Server():
         print "Listening on port %d" %port
         #chunks=[]
         
+        (clientname,address)=self.sock.accept()
+        print "Connection from %s" % str(address)
         
         while 1:
-            (clientname,address)=self.sock.accept()
-            print "Connection from %s" % str(address)
             chunk=clientname.recv(4096)
             """if not chunk:
                 print"Error:Socket connection broken"
                 break"""
             #chunks.append(chunk)
             print chunk
-            clientname.close()
+            #clientname.close()
         #print ''.join(chunks)
 def main():
     p2p=Server()

@@ -11,27 +11,31 @@ class Client():
         self.sock.connect((host,port))
     def client(self,host,port,msg):
         print "Connecting"
-        self.connect(host,port)
+        #self.connect(host,port)
         print "Connected"
         #msg=raw_input('')
         totalsent=0
-        while totalsent<len(msg):
-            sent=self.sock.send(msg[totalsent:])
-            if sent ==0:
-                raise RuntimeError("broken connection")
-            totalsent+=sent
-        self.sock.close()
+        #while totalsent<len(msg):
+        sent=self.sock.send(msg)
+            #"""if sent ==0:
+            #    raise RuntimeError("broken connection")
+            #totalsent+=sent"""
+	#print "Socket closed"
+        #self.sock.close()
 
 def main():
     p2p=Client()
     host=raw_input("Enter the hostname\n")
     port=int(raw_input("Enter the port\n"))
     s=''
-    #p2p.connect(host,port)
-    while 1:     
+    p2p.connect(host,port)
+    while 1:
+        #p2p=Client()
+        print "Waiting for msg"
         msg=raw_input('')
         if msg=='exit':
             break
+        print "Sending"
         p2p.client(host,port,msg)
         
 
