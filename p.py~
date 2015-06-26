@@ -1,0 +1,101 @@
+import socket
+import sys
+import time
+import multiprocessing
+class Server:
+    def __init__(self,l,sock=None):
+        if sock is None:
+            self.sock=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+        
+        else:
+            self.sock=sock
+	self.l=l
+    def server(self):
+	#self.l.acquire()
+        print "program control is in server"
+        hostname=''
+        port=51412
+        self.sock.bind((hostname,port))
+        self.sock.listen(1)
+        print "Listening on port %d" %port
+        #chunks=[]
+        time.sleep(2)
+	#self.l.release()
+        (clientname,address)=self.sock.accept()
+        print "Connection from %s" % str(address)
+        
+        while 1:
+            chunk=clientname.recv(4096)
+            """if not chunk:
+                print"Error:Socket connection broken"
+                break"""
+            #chunks.append(chunk)
+            print chunk
+            #clientname.close()
+        #print ''.join(chunks)
+
+    def main(self):
+        self.server()
+
+class Client:
+    def __init__(self,l,sock=None):
+        if sock is None:
+            self.sock=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+            self.l=l
+        else:
+            self.sock=sock
+    def connect(self,host,port):
+        self.sock.connect((host,port))
+    def client(self,host,port,msg):
+        print "Connecting"
+        #self.connect(host,port)
+        print "Connected"
+        #msg=raw_input('')
+        totalsent=0
+        #while totalsent<len(msg):
+        sent=self.sock.send(msg)
+            #"""if sent ==0:
+            #    raise RuntimeError("broken connection")
+            #totalsent+=sent"""
+	#print "Socket closed"
+        #self.sock.close()
+
+    def main(self):
+        self.l.acquire()
+        try:
+            host=sys.stdin.readline(self)
+	    print host
+            port=int(raw_input("Enter the port\n"))
+        except EOFError:
+	    print "Error"
+            return 1
+        
+        self.l.release()
+        s=''
+        self.connect(host,port)
+        while 1:
+            #p2p=Client()
+            print "Waiting for msg"
+            msg=raw_input('')
+            if msg=='exit':
+                break
+            print "Sending"
+            self.client(host,port,msg)
+
+def srvr(l):
+    srv=Server(l)
+    srv.main()
+def client(l):
+    cli=Client(l)
+    cli.main()
+#def printLogs()
+if __name__=='__main__':
+    l=multiprocessing.Lock()
+    lock=[l]
+    d=multiprocessing.Process(name='Server', target=srvr,args=lock)
+    d.daemon=True
+    n=multiprocessing.Process(name='Client', target=client,args=lock)
+    n.daemon=False
+    d.start()
+    time.sleep(1)
+    n.start()
