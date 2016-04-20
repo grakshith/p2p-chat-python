@@ -17,6 +17,22 @@ The p2p version can be started using the command
 $ python p2p.py
 ````
 ----
+Alternatively, it can be run from the terminal itself. 
+####1. Make the files executable
+```sh
+$chmod u+x Server.py Client.py p2p.py
+````
+####2. Run the program
+````sh
+$ ./Server.py
+````
+````sh
+$ ./Client.py
+````
+````sh
+$ ./p2p.py
+````
+----
 The client asks for the hostname and the port on which the server is listening. Then an attempt is made to connect to the server. If everything is all right, the client should prompt you to start typing your messages. Else an exception is thrown.
 
 ##2. Things to be implemented yet
