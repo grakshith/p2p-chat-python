@@ -5,11 +5,11 @@ This is a p2p chat program written in python. The traditional client server base
 ## 1. Getting started
 Start the server using 
 ```sh
-$ python server.py
+$ python Server.py
 ````
 The clients can connect to the server through client.py
 ```sh
-$ python client.py
+$ python Client.py
 ````
 ---
 The p2p version can be started using the command
