@@ -29,23 +29,23 @@
       </header>
       <section>
         <h1>
-<a id="p2p-chat-app" class="anchor" href="#p2p-chat-app" aria-hidden="true"><span class="octicon octicon-link"></span></a>P2P Chat App</h1>
+<a id="p2p-chat-app" class="anchor" href="#p2p-chat-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>P2P Chat App</h1>
 
 <h4>
-<a id="a-simple-to-use-chat-program-that-uses-sockets-and-multi-threading" class="anchor" href="#a-simple-to-use-chat-program-that-uses-sockets-and-multi-threading" aria-hidden="true"><span class="octicon octicon-link"></span></a>A simple to use chat program that uses sockets and multi-threading</h4>
+<a id="a-simple-to-use-chat-program-that-uses-sockets-and-multi-threading" class="anchor" href="#a-simple-to-use-chat-program-that-uses-sockets-and-multi-threading" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A simple to use chat program that uses sockets and multi-threading</h4>
 
 <p>This is a p2p chat program written in python. The traditional client server based chat is also supported</p>
 
 <h2>
-<a id="1-getting-started" class="anchor" href="#1-getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Getting started</h2>
+<a id="1-getting-started" class="anchor" href="#1-getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Getting started</h2>
 
 <p>Start the server using </p>
 
-<div class="highlight highlight-source-shell"><pre>$ python server.py</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ python Server.py</pre></div>
 
 <p>The clients can connect to the server through client.py</p>
 
-<div class="highlight highlight-source-shell"><pre>$ python client.py</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ python Client.py</pre></div>
 
 <hr>
 
@@ -55,10 +55,28 @@
 
 <hr>
 
+<p>Alternatively, it can be run from the terminal itself. </p>
+
+<h4>
+<a id="1-make-the-files-executable" class="anchor" href="#1-make-the-files-executable" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Make the files executable</h4>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-smi">$chmod</span> u+x Server.py Client.py p2p.py</pre></div>
+
+<h4>
+<a id="2-run-the-program" class="anchor" href="#2-run-the-program" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Run the program</h4>
+
+<div class="highlight highlight-source-shell"><pre>$ ./Server.py</pre></div>
+
+<div class="highlight highlight-source-shell"><pre>$ ./Client.py</pre></div>
+
+<div class="highlight highlight-source-shell"><pre>$ ./p2p.py</pre></div>
+
+<hr>
+
 <p>The client asks for the hostname and the port on which the server is listening. Then an attempt is made to connect to the server. If everything is all right, the client should prompt you to start typing your messages. Else an exception is thrown.</p>
 
 <h2>
-<a id="2-things-to-be-implemented-yet" class="anchor" href="#2-things-to-be-implemented-yet" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Things to be implemented yet</h2>
+<a id="2-things-to-be-implemented-yet" class="anchor" href="#2-things-to-be-implemented-yet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Things to be implemented yet</h2>
 
 <ul>
 <li>General exception handling</li>
@@ -67,19 +85,19 @@
 </ul>
 
 <h2>
-<a id="3-general" class="anchor" href="#3-general" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. General</h2>
+<a id="3-general" class="anchor" href="#3-general" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. General</h2>
 
 <p>Feel free to report bugs. Or shoot an e-mail to <a href="mailto:hehaichi@gmail.com">hehaichi@gmail.com</a></p>
 
 <h2>
-<a id="4-license" class="anchor" href="#4-license" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. License</h2>
+<a id="4-license" class="anchor" href="#4-license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4. License</h2>
 
 <p>This work is licensed with the MIT license</p>
 
 <h4>
-<a id="the-mit-license-mit" class="anchor" href="#the-mit-license-mit" aria-hidden="true"><span class="octicon octicon-link"></span></a>The MIT License (MIT)</h4>
+<a id="the-mit-license-mit" class="anchor" href="#the-mit-license-mit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The MIT License (MIT)</h4>
 
-<p>Copyright (c) 2015 Rakshith G</p>
+<p>Copyright (c) 2015 <strong>Rakshith G</strong></p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 
@@ -88,23 +106,21 @@
 <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/hehaichi">Rakshith</a></p>
-        <p><center>Copyright &copy 2015 Rakshith G</center></p>
-        <p><small>Hosted on GitHub Pages</small></p>
+        <p>This project is maintained by <a href="https://github.com/hehaichi">hehaichi</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-          <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-          ga('create', 'UA-71659890-1', 'auto');
-          ga('send', 'pageview');
-
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
-          
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-43274821");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
 
   </body>
 </html>
